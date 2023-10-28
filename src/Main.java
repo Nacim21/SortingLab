@@ -1,28 +1,31 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) {
-        // long startTime = System.nanoTime();
-
-        // Run your algorithm or code here
-        // for (int i = 0; i < 10; i++) {
-        //     System.out.println("helllo");
-        // }
-        // Replace this with the actual algorithm you want to time
-
-        // long endTime = System.nanoTime();
-        // long executionTime = endTime - startTime;
-
-        // Convert nanoseconds to milliseconds for readability
-        // double executionTimeMilliseconds = (double) executionTime / 1_000_000.0;
-
-
-        String[] test = {"Cat","Car","Dog","Bus","Goat","Hello","Minecraft","PLAYBOI CARTER JORDAN JARTER","HOW","no way","perc","percocet","perc 30","beretta"};
-        bubbleSort(test);
-        for (int i = 0; i < test.length; i++) {
-            System.out.println(test[i]);
-        }
+    public static void main(String[] args) throws FileNotFoundException {
         
+        String[] words = new String[641392];
+
+        populateArray(words, "resources/dictionary.txt");
+
+        printArray(words);
+        
+        
+    }
+
+    //Utilities
+    public static void populateArray(String[] array,String filepath) throws FileNotFoundException{
+        Scanner fileScanner = new Scanner(new File(filepath));
+        for (int i = 0; i < array.length; i++) {
+            String current = fileScanner.nextLine();
+            array[i] = current;
+        }
+    }
+    public static void printArray(String[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+", ");
+        }
     }
 
     public static void bubbleSort(String[] arr){
@@ -36,7 +39,6 @@ public class Main {
                 }
             }
         }
-        
     }
 
 
