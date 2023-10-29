@@ -1,8 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
@@ -22,7 +20,7 @@ public class Main {
                 "KlMnOpQrS6",
                 "TUVwXyZ01"
         };
-        insertionSort(randomStrings);
+        quicksort(randomStrings,0, randomStrings.length-1);
         printArray(randomStrings);
 
       //  populateArray(words, "resources/dictionary.txt");
@@ -101,7 +99,59 @@ public class Main {
             }
         }
     }
+    public static int partition(String[] words, int i, int k) {
+        int l;
+        int h;
+        int midpoint;
+        String pivot;
+        String temp;
+        boolean done;
+        /* Pick middle element as pivot */
+        midpoint = i + (k - i) / 2;
+        pivot = words[midpoint];
+        done = false;
+        l = i;
+        h = k;
+        while (!done) {
+            /* Increment l while numbers[l] < pivot */
+            while ((words[l].compareTo(pivot)) < 0) {
+                ++l;
+            }
+            /* Decrement h while pivot < numbers[h] */
+            while ((pivot.compareTo(words[h]) < 0)) {
+                --h;
+            }
+         /* If there are zero or one items remaining,
+            all numbers are partitioned. Return h */
+            if (l >= h) {
+                done = true;
+            } else {
+            /* Swap numbers[l] and numbers[h],
+               update l and h */
+                temp = words[l];
+                words[l] = words[h];
+                words[h]=  temp;
 
-
+                ++l;
+                --h;
+            }
+        }
+        return h;
+    }
+    public static void quicksort(String[] words, int i, int k) {
+        int j;
+      /* Base case: If there are 1 or zero entries to sort,
+       partition is already sorted */
+        if (i >= k) {
+            return;
+        }
+      /* Partition the data within the array. Value j returned
+         from partitioning is location of last item in low partition. */
+        j = partition(words, i, k);
+      /* Recursively sort low partition (i to j) and
+         high partition (j + 1 to k) */
+        quicksort(words, i, j);
+        quicksort(words, j + 1, k);
+    }
 
 }
