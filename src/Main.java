@@ -8,10 +8,24 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         
         String[] words = new String[641392];
+        String[] randomStrings = {
+                "AbcDeFgHi1",
+                "KlmNoPqRs2",
+                "TuvWxYz01",
+                "3456ABCD78",
+                "EfGhIjKlM3",
+                "NOpQRsTuV4",
+                "WXYZ56789a",
+                "bCdEfGhIJ5",
+                "KlMnOpQrS6",
+                "TUVwXyZ01"
+        };
+        insertionSort(randomStrings);
+        printArray(randomStrings);
 
-        populateArray(words, "resources/dictionary.txt");
+      //  populateArray(words, "resources/dictionary.txt");
 
-        printArray(words);
+       // printArray(words);
         long startTime = System.nanoTime();
 
         long endTime = System.nanoTime();
@@ -70,21 +84,21 @@ public class Main {
             numbers[indexSmallest] = temp;
         }
     }
-    public static void insertionSort(int [] numbers) {
+    public static void insertionSort(String [] words) {
         int i;
         int j;
-        int temp;      // Temporary variable for swap
+        String temp;      // Temporary variable for swap
 
-        for (i = 1; i < numbers.length; ++i) {
+        for (i = 1; i < words.length; ++i) {
             j = i;
             // Insert numbers[i] into sorted part
             // stopping once numbers[i] in correct position
-            while (j > 0 && numbers[j] < numbers[j - 1]) {
+            while (j > 0 && words[j].compareTo(words[j - 1])<0) {
 
                 // Swap numbers[j] and numbers[j - 1]
-                temp = numbers[j];
-                numbers[j] = numbers[j - 1];
-                numbers[j - 1] = temp;
+                temp = words[j];
+                words[j] = words[j - 1];
+                words[j - 1] = temp;
                 --j;
             }
         }
