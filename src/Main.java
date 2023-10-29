@@ -61,27 +61,21 @@ public class Main {
             }
         }
     }
-    public static void selectionSort(int [] numbers) {
-        int i;
-        int j;
+    public static void selectionSort(String[] array) {
         int indexSmallest;
-        int temp;      // Temporary variable for swap
 
-        for (i = 0; i < numbers.length - 1; ++i) {
-
-            // Find index of smallest remaining element
+        for (int i = 0; i < array.length - 1; ++i) {
             indexSmallest = i;
-            for (j = i + 1; j < numbers.length; ++j) {
 
-                if (numbers[j] < numbers[indexSmallest]) {
+            for (int j = i + 1; j < array.length; ++j) {
+                if (array[j].compareTo(array[indexSmallest]) < 0) {
                     indexSmallest = j;
                 }
             }
 
-            // Swap numbers[i] and numbers[indexSmallest]
-            temp = numbers[i];
-            numbers[i] = numbers[indexSmallest];
-            numbers[indexSmallest] = temp;
+            String temp = array[i];
+            array[i] = array[indexSmallest];
+            array[indexSmallest] = temp;
         }
     }
     public static void insertionSort(String [] words) {
