@@ -1,6 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
@@ -10,8 +12,13 @@ public class Main {
         populateArray(words, "resources/dictionary.txt");
 
         printArray(words);
-        
-        
+        long startTime = System.nanoTime();
+
+        long endTime = System.nanoTime();
+
+        long elapsedTime = endTime - startTime;
+
+
     }
 
     //Utilities
