@@ -83,15 +83,11 @@ public class Main {
     public static void insertionSort(String [] words) {
         int i;
         int j;
-        String temp;      // Temporary variable for swap
+        String temp;
 
         for (i = 1; i < words.length; ++i) {
             j = i;
-            // Insert numbers[i] into sorted part
-            // stopping once numbers[i] in correct position
             while (j > 0 && words[j].compareTo(words[j - 1])<0) {
-
-                // Swap numbers[j] and numbers[j - 1]
                 temp = words[j];
                 words[j] = words[j - 1];
                 words[j - 1] = temp;
@@ -106,23 +102,19 @@ public class Main {
         String pivot;
         String temp;
         boolean done;
-        /* Pick middle element as pivot */
+
         midpoint = i + (k - i) / 2;
         pivot = words[midpoint];
         done = false;
         l = i;
         h = k;
         while (!done) {
-            /* Increment l while numbers[l] < pivot */
             while ((words[l].compareTo(pivot)) < 0) {
                 ++l;
             }
-            /* Decrement h while pivot < numbers[h] */
             while ((pivot.compareTo(words[h]) < 0)) {
                 --h;
             }
-         /* If there are zero or one items remaining,
-            all numbers are partitioned. Return h */
             if (l >= h) {
                 done = true;
             } else {
