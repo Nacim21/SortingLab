@@ -21,8 +21,6 @@ public class Main {
         //Runtime 
         System.out.println("Quicksort runtime"+executionTimeMilliseconds+"ms");
         
-
-        //sex
     }
 
     //Utilities
