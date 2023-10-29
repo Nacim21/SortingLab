@@ -5,15 +5,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
+        //Declaring and populationg
         String[] words = new String[641392];
-        populateArray(words, );
-        long startTime = System.nanoTime();
+        populateArray(words, "resources/dictionary.txt");
 
+        // System timer start and sorting
+        long startTime = System.nanoTime();
+        SortAlgorithms.quicksort(words, 0, 0);
+      
+        // Sort end and time elapsed calculation
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
         double executionTimeMilliseconds = (double) elapsedTime / 1_000_000.0;
 
-        System.out.println(executionTimeMilliseconds+"ms");
+        //Runtime 
+        System.out.println("Quicksort runtime"+executionTimeMilliseconds+"ms");
+        
+
+        //sex
     }
 
     //Utilities
