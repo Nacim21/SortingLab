@@ -20,8 +20,13 @@ public class Main {
                 "KlMnOpQrS6",
                 "TUVwXyZ01"
         };
+<<<<<<< Updated upstream
         quicksort(randomStrings,0, randomStrings.length-1);
         printArray(randomStrings);
+=======
+        insertionSort(randomStrings);
+        // printArray(randomStrings);
+>>>>>>> Stashed changes
 
       //  populateArray(words, "resources/dictionary.txt");
 
@@ -31,7 +36,7 @@ public class Main {
 
         long elapsedTime = endTime - startTime;
 
-        System.out.println(elapsedTime+"ms");
+        System.out.println(elapsedTime/1000);
 
 
     }
