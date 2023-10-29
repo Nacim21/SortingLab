@@ -20,18 +20,14 @@ public class Main {
                 "KlMnOpQrS6",
                 "TUVwXyZ01"
         };
-        quicksort(randomStrings,0, randomStrings.length-1);
-        printArray(randomStrings);
-
-      //  populateArray(words, "resources/dictionary.txt");
-
-       // printArray(words);
+        SortAlgorithms.quicksort(randomStrings,0, randomStrings.length-1);
+        // printArray(randomStrings);
 
         long endTime = System.nanoTime();
-
         long elapsedTime = endTime - startTime;
+        double executionTimeMilliseconds = (double) elapsedTime / 1_000_000.0;
 
-        System.out.println(elapsedTime/1000);
+        System.out.println(executionTimeMilliseconds+"ms");
 
 
     }
