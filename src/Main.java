@@ -8,6 +8,8 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         
         String[] words = new String[641392];
+
+        long startTime = System.nanoTime();
         String[] randomStrings = {
                 "AbcDeFgHi1",
                 "KlmNoPqRs2",
@@ -26,11 +28,12 @@ public class Main {
       //  populateArray(words, "resources/dictionary.txt");
 
        // printArray(words);
-        long startTime = System.nanoTime();
 
         long endTime = System.nanoTime();
 
         long elapsedTime = endTime - startTime;
+
+        System.out.println(elapsedTime+"ms");
 
 
     }
@@ -49,6 +52,7 @@ public class Main {
         }
     }
 
+    //Algorithms
     public static void bubbleSort(String[] arr){
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length-i-1; j++) {
