@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        
+
         String[] words = new String[641392];
 
         long startTime = System.nanoTime();
@@ -20,7 +20,7 @@ public class Main {
                 "KlMnOpQrS6",
                 "TUVwXyZ01"
         };
-        quicksort(randomStrings,0, randomStrings.length-1);
+        mergeSort(randomStrings,0, randomStrings.length-1);
         printArray(randomStrings);
 
       //  populateArray(words, "resources/dictionary.txt");
