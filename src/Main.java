@@ -20,13 +20,8 @@ public class Main {
                 "KlMnOpQrS6",
                 "TUVwXyZ01"
         };
-<<<<<<< Updated upstream
         quicksort(randomStrings,0, randomStrings.length-1);
         printArray(randomStrings);
-=======
-        insertionSort(randomStrings);
-        // printArray(randomStrings);
->>>>>>> Stashed changes
 
       //  populateArray(words, "resources/dictionary.txt");
 
