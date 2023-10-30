@@ -6,28 +6,9 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         String[] words = new String[641392];
-
+        populateArray(words, );
         long startTime = System.nanoTime();
-        String[] randomStrings = {
-                "AbcDeFgHi1",
-                "KlmNoPqRs2",
-                "TuvWxYz01",
-                "3456ABCD78",
-                "EfGhIjKlM3",
-                "NOpQRsTuV4",
-                "WXYZ56789a",
-                "bCdEfGhIJ5",
-                "KlMnOpQrS6",
-                "TUVwXyZ01"
-        };
-        SortAlgorithms.shellSort(randomStrings);
-        printArray(randomStrings);
 
-      //  populateArray(words, "resources/dictionary.txt");
-
-       // printArray(words);
-        SortAlgorithms.quicksort(randomStrings,0, randomStrings.length-1);
-        // printArray(randomStrings);
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
         double executionTimeMilliseconds = (double) elapsedTime / 1_000_000.0;
