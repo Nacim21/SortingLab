@@ -155,19 +155,19 @@ public class SortAlgorithms {
             merge(words, i, j, k);
         }
     }
-    public static void shellSort(int[] arr) {
-        int n = arr.length;
+    public static void shellSort(String[] word) {
+        int n = word.length;
 
         // Start with a large gap and reduce it over time
         for (int gap = n / 2; gap > 0; gap /= 2) {
             // Perform insertion sort for elements at the current gap
             for (int i = gap; i < n; i++) {
-                int temp = arr[i];
+                String temp = word[i];
                 int j;
-                for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
-                    arr[j] = arr[j - gap];
+                for (j = i; j >= gap && ((word[j - gap].compareTo(temp))>1); j -= gap) {
+                    word[j] = word[j - gap];
                 }
-                arr[j] = temp;
+                word[j] = temp;
             }
         }
     }
