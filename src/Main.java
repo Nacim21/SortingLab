@@ -20,8 +20,8 @@ public class Main {
                 "KlMnOpQrS6",
                 "TUVwXyZ01"
         };
-        SortAlgorithms.countingSort(randomStrings);
-        printArray(randomStrings);
+
+      //  printArray();
 
       //  populateArray(words, "resources/dictionary.txt");
 
