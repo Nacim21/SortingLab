@@ -155,5 +155,52 @@ public class SortAlgorithms {
             merge(words, i, j, k);
         }
     }
+    public static String[] countingSort(String[] arr) {
+        int maxVal = Integer.MIN_VALUE;
+        int minVal = Integer.MAX_VALUE;
 
+        // Find the minimum and maximum string sums
+        for (String str : arr) {
+            int stringSum = 0;
+            for (char c : str.toCharArray()) {
+                stringSum += (int) c;
+            }
+            maxVal = Math.max(maxVal, stringSum);
+            minVal = Math.min(minVal, stringSum);
+        }
+
+        int range = maxVal - minVal + 1;
+
+        // Create a counting array to store the count of strings
+        int[] countingArray = new int[range];
+
+        // Count the occurrences of each string in the input array
+        for (String str : arr) {
+            int stringSum = 0;
+            for (char c : str.toCharArray()) {
+                stringSum += (int) c;
+            }
+            countingArray[stringSum - minVal]++;
+        }
+
+        // Reconstruct the sorted output array
+        String[] sortedArray = new String[arr.length];
+        int index = 0;
+        for (int i = 0; i < range; i++) {
+            for (int j = 0; j < countingArray[i]; j++) {
+                int stringSum = i + minVal;
+                for (String str : arr) {
+                    int sum = 0;
+                    for (char c : str.toCharArray()) {
+                        sum += (int) c;
+                    }
+                    if (sum == stringSum) {
+                        sortedArray[index] = str;
+                        index++;
+                    }
+                }
+            }
+        }
+        return sortedArray;
+    }
 }

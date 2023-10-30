@@ -20,25 +20,19 @@ public class Main {
                 "KlMnOpQrS6",
                 "TUVwXyZ01"
         };
-<<<<<<< HEAD
-        mergeSort(randomStrings,0, randomStrings.length-1);
+        SortAlgorithms.countingSort(randomStrings);
         printArray(randomStrings);
 
       //  populateArray(words, "resources/dictionary.txt");
 
        // printArray(words);
-=======
         SortAlgorithms.quicksort(randomStrings,0, randomStrings.length-1);
         // printArray(randomStrings);
->>>>>>> c378cebb3ece9211d8aa493c7c73bedc54ced764
-
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
         double executionTimeMilliseconds = (double) elapsedTime / 1_000_000.0;
 
         System.out.println(executionTimeMilliseconds+"ms");
-
-
     }
 
     //Utilities
