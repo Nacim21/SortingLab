@@ -1,26 +1,64 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
+        //Declaring and populating the parent array
+        String[] wordsForMerge = new String[641392];
+        populateArray(wordsForMerge, "resources/dictionary.txt");
+        // Declaring and initializing each array
+        String[] wordForInsertion = Arrays.copyOf(wordsForMerge, wordsForMerge.length);
+        String[] wordForBubble = Arrays.copyOf(wordsForMerge, wordsForMerge.length);
+        String[] wordForQuick = Arrays.copyOf(wordsForMerge, wordsForMerge.length);
+        String[] wordForShell = Arrays.copyOf(wordsForMerge, wordsForMerge.length);
+        String[] wordForSelection = Arrays.copyOf(wordsForMerge, wordsForMerge.length);
 
-        //Declaring and populationg
-        String[] words = new String[641392];
-        populateArray(words, "resources/dictionary.txt");
-
-        // System timer start and sorting
+        // Starting time for Merge Sort
         long startTime = System.nanoTime();
-        SortAlgorithms.quicksort(words, 0, 0);
-      
-        // Sort end and time elapsed calculation
+        SortAlgorithms.mergeSort(wordsForMerge,0,wordsForMerge.length-1);
+        // Sort end time//time calculation // nanosecond to millisecond conversion
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
         double executionTimeMilliseconds = (double) elapsedTime / 1_000_000.0;
+        //Printing merge runtime
+        System.out.println("mergeSort Runtime "+executionTimeMilliseconds+"ms");
 
-        //Runtime 
-        System.out.println("Quicksort runtime"+executionTimeMilliseconds+"ms");
-        
+        //Resetting starting time // this will be the starting time for Insertion sort
+        startTime = System.nanoTime();
+        SortAlgorithms.insertionSort(wordForInsertion);
+        //Insertion sort endTime // time calculation // nanosecond to millisecond conversion
+        endTime = System.nanoTime();
+        elapsedTime = endTime -startTime;
+        executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+        //Printing merge runtime
+        System.out.println("insertionSort Runtime "+executionTimeMilliseconds+"ms");
+
+        //Starting time for Bubble Sort
+        startTime = System.nanoTime();
+        SortAlgorithms.bubbleSort(wordForBubble);
+        // Sort end time//time calculation // nanosecond to millisecond conversion
+        endTime = System.nanoTime();
+        elapsedTime = endTime -startTime;
+        executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+        //Printing bubble runtime
+        System.out.println("bubbleSort Runtime "+executionTimeMilliseconds+"ms");
+
+        //Starting time for Quick Sort
+        startTime = System.nanoTime();
+        SortAlgorithms.quickSort(wordForQuick, 0, wordForQuick.length-1);
+        // Sort end time//time calculation // nanosecond to millisecond conversion
+        endTime = System.nanoTime();
+        elapsedTime = endTime -startTime;
+        executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+        //Printing bubble runtime
+        System.out.println("quickSort Runtime "+executionTimeMilliseconds+"ms");
+
+
+
+
+
     }
 
     //Utilities

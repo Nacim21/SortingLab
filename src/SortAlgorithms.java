@@ -82,7 +82,7 @@ public class SortAlgorithms {
         return h;
     }
     
-    public static void quicksort(String[] words, int i, int k) {
+    public static void quickSort(String[] words, int i, int k) {
         int j;
       /* Base case: If there are 1 or zero entries to sort,
        partition is already sorted */
@@ -94,8 +94,8 @@ public class SortAlgorithms {
         j = partition(words, i, k);
       /* Recursively sort low partition (i to j) and
          high partition (j + 1 to k) */
-        quicksort(words, i, j);
-        quicksort(words, j + 1, k);
+        quickSort(words, i, j);
+        quickSort(words, j + 1, k);
     }
     public static void merge(String[] words, int i, int j, int k) {
         int mergedSize = k - i + 1;       // Size of merged partition
