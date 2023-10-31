@@ -73,7 +73,7 @@ public class SortAlgorithms {
                update l and h */
                 temp = words[l];
                 words[l] = words[h];
-                words[h]=  temp;
+                words[h] = temp;
 
                 ++l;
                 --h;
@@ -81,7 +81,6 @@ public class SortAlgorithms {
         }
         return h;
     }
-    
     public static void quickSort(String[] words, int i, int k) {
         int j;
       /* Base case: If there are 1 or zero entries to sort,
@@ -159,9 +158,9 @@ public class SortAlgorithms {
         int n = word.length;
 
         // Start with a large gap and reduce it over time
-        for (int gap = n / 2; gap > 0; gap /= 2) {
+        for(int gap = (n/ 2); gap > 0; gap /= 2){
             // Perform insertion sort for elements at the current gap
-            for (int i = gap; i < n; i++) {
+            for(int i = gap; i < n; i++) {
                 String temp = word[i];
                 int j;
                 for (j = i; j >= gap && ((word[j - gap].compareTo(temp))>1); j -= gap) {

@@ -25,7 +25,7 @@ public class Main {
         //Printing merge runtime
         System.out.println("mergeSort Runtime "+executionTimeMilliseconds+"ms");
 
-        //Resetting starting time // this will be the starting time for Insertion sort
+        //Starting time for Insertion Sort
         startTime = System.nanoTime();
         SortAlgorithms.insertionSort(wordForInsertion);
         //Insertion sort endTime // time calculation // nanosecond to millisecond conversion
@@ -55,10 +55,25 @@ public class Main {
         //Printing bubble runtime
         System.out.println("quickSort Runtime "+executionTimeMilliseconds+"ms");
 
+        //Starting time for Shell Sort
+        startTime = System.nanoTime();
+        SortAlgorithms.shellSort(wordForQuick);
+        // Sort end time//time calculation // nanosecond to millisecond conversion
+        endTime = System.nanoTime();
+        elapsedTime = endTime -startTime;
+        executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+        //Printing bubble runtime
+        System.out.println("shellSort Runtime "+executionTimeMilliseconds+"ms");
 
-
-
-
+        //Starting time for Selection Sort
+        startTime = System.nanoTime();
+        SortAlgorithms.selectionSort(wordForQuick);
+        // Sort end time//time calculation // nanosecond to millisecond conversion
+        endTime = System.nanoTime();
+        elapsedTime = endTime -startTime;
+        executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+        //Printing bubble runtime
+        System.out.println("selectionSort Runtime "+executionTimeMilliseconds+"ms");
     }
 
     //Utilities
