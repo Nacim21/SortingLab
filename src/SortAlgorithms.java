@@ -11,7 +11,6 @@ public class SortAlgorithms {
             }
         }
     }
-
     public static void selectionSort(String[] array) {
         int indexSmallest;
 
@@ -163,11 +162,12 @@ public class SortAlgorithms {
             for(int i = gap; i < n; i++) {
                 String temp = word[i];
                 int j;
-                for (j = i; j >= gap && ((word[j - gap].compareTo(temp))>1); j -= gap) {
+                for (j = i; j >= gap && ((word[j - gap].compareTo(temp))>0); j -= gap) {
                     word[j] = word[j - gap];
                 }
                 word[j] = temp;
             }
         }
     }
+
 }
