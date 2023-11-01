@@ -14,10 +14,10 @@ public class Main {
         String[] wordForQuick = Arrays.copyOf(wordsForMerge, wordsForMerge.length);
         String[] wordForShell = Arrays.copyOf(wordsForMerge, wordsForMerge.length);
         String[] wordForSelection = Arrays.copyOf(wordsForMerge, wordsForMerge.length);
-/*
+
         // Starting time for Merge Sort
         long startTime = System.nanoTime();
-        SortAlgorithms.mergeSort(wordsForMerge,0,wordsForMerge.length-1);
+        SortAlgorithms.mergeSort(wordsForMerge);
         // Sort end time//time calculation // nanosecond to millisecond conversion
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
@@ -47,21 +47,21 @@ public class Main {
 
         //Starting time for Quick Sort
         startTime = System.nanoTime();
-        SortAlgorithms.quickSort(wordForQuick, 0, wordForQuick.length-1);
+        SortAlgorithms.quickSort(wordForQuick);
         // Sort end time//time calculation // nanosecond to millisecond conversion
         endTime = System.nanoTime();
         elapsedTime = endTime -startTime;
         executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
         //Printing bubble runtime
         System.out.println("quickSort Runtime "+executionTimeMilliseconds+"ms");
-    */
+
         //Starting time for Shell Sort
-        long startTime = System.nanoTime();
+        startTime = System.nanoTime();
         SortAlgorithms.shellSort(wordForShell);
         // Sort end time//time calculation // nanosecond to millisecond conversion
-        long endTime = System.nanoTime();
-        long elapsedTime = endTime -startTime;
-        double executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+        endTime = System.nanoTime();
+        elapsedTime = endTime -startTime;
+        executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
         //Printing bubble runtime
         System.out.println("shellSort Runtime "+executionTimeMilliseconds+"ms");
 
