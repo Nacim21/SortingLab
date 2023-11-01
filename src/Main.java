@@ -17,35 +17,37 @@ public class Main {
 
 
 
+        /*------------------------------------Sorting Algorithms----------------------------------------------------------------*/
+
         // Starting time for Merge Sort
         long startTime = System.nanoTime();
-        // SortAlgorithms.mergeSort(wordsForMerge);
+         SortAlgorithms.mergeSort(wordsForMerge);
         // Sort end time//time calculation // nanosecond to millisecond conversion
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
         double executionTimeMilliseconds = (double) elapsedTime / 1_000_000.0;
-        //Printing merge runtime
-        // System.out.println("mergeSort Runtime "+executionTimeMilliseconds+"ms");
+         //Printing merge runtime
+         System.out.println("mergeSort Runtime "+executionTimeMilliseconds+"ms");
 
-        //Starting time for Insertion Sort
-        // startTime = System.nanoTime();
-        // SortAlgorithms.insertionSort(wordForInsertion);
-        // //Insertion sort endTime // time calculation // nanosecond to millisecond conversion
-        // endTime = System.nanoTime();
-        // elapsedTime = endTime -startTime;
-        // executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
-        // //Printing merge runtime
-        // System.out.println("insertionSort Runtime "+executionTimeMilliseconds+"ms");
+         // Starting time for Insertion Sort
+         startTime = System.nanoTime();
+         SortAlgorithms.insertionSort(wordForInsertion);
+         //Insertion sort endTime // time calculation // nanosecond to millisecond conversion
+         endTime = System.nanoTime();
+         elapsedTime = endTime -startTime;
+         executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+         //Printing merge runtime
+         System.out.println("insertionSort Runtime "+executionTimeMilliseconds+"ms");
 
-        // //Starting time for Bubble Sort
-        // startTime = System.nanoTime();
-        // SortAlgorithms.bubbleSort(wordForBubble);
-        // // Sort end time//time calculation // nanosecond to millisecond conversion
-        // endTime = System.nanoTime();
-        // elapsedTime = endTime -startTime;
-        // executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
-        // //Printing bubble runtime
-        // System.out.println("bubbleSort Runtime "+executionTimeMilliseconds+"ms");
+         //Starting time for Bubble Sort
+         startTime = System.nanoTime();
+         SortAlgorithms.bubbleSort(wordForBubble);
+         // Sort end time//time calculation // nanosecond to millisecond conversion
+         endTime = System.nanoTime();
+         elapsedTime = endTime -startTime;
+         executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+         //Printing bubble runtime
+         System.out.println("bubbleSort Runtime "+executionTimeMilliseconds+"ms");
 
         //Starting time for Quick Sort
         startTime = System.nanoTime();
@@ -58,28 +60,28 @@ public class Main {
         System.out.println("quickSort Runtime "+executionTimeMilliseconds+"ms");
 
 
-        // //Starting time for Shell Sort
-        // startTime = System.nanoTime();
-        // SortAlgorithms.shellSort(wordForShell);
-        // // Sort end time//time calculation // nanosecond to millisecond conversion
-        // endTime = System.nanoTime();
-        // elapsedTime = endTime -startTime;
-        // executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
-        // //Printing bubble runtime
-        // System.out.println("shellSort Runtime "+executionTimeMilliseconds+"ms");
+         //Starting time for Shell Sort
+         startTime = System.nanoTime();
+         SortAlgorithms.shellSort(wordForShell);
+         // Sort end time//time calculation // nanosecond to millisecond conversion
+         endTime = System.nanoTime();
+         elapsedTime = endTime -startTime;
+         executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+         //Printing bubble runtime
+         System.out.println("shellSort Runtime "+executionTimeMilliseconds+"ms");
 
-        // //Starting time for Selection Sort
-        // startTime = System.nanoTime();
-        // SortAlgorithms.selectionSort(wordForSelection);
-        // // Sort end time//time calculation // nanosecond to millisecond conversion
-        // endTime = System.nanoTime();
-        // elapsedTime = endTime -startTime;
-        // executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
-        // //Printing bubble runtime
-        // System.out.println("selectionSort Runtime "+executionTimeMilliseconds+"ms");
+         //Starting time for Selection Sort
+         startTime = System.nanoTime();
+         SortAlgorithms.selectionSort(wordForSelection);
+         // Sort end time//time calculation // nanosecond to millisecond conversion
+         endTime = System.nanoTime();
+         elapsedTime = endTime -startTime;
+         executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+         //Printing bubble runtime
+         System.out.println("selectionSort Runtime "+executionTimeMilliseconds+"ms");
 
 
-        /*---------------------------------------------------Searching test cases--------------------------------------------- */
+        /*---------------------------------------------------Binary Searching test cases--------------------------------------------- */
 
         //Starting time for Quick Sort
         startTime = System.nanoTime();
@@ -119,6 +121,45 @@ public class Main {
         //Printing bubble runtime
         System.out.println("Binary Search Runtime yellow "+executionTimeMilliseconds+"ms");
 
+        /*---------------------------------------------------Sequential Searching test cases--------------------------------------------- */
+
+        startTime = System.nanoTime();
+        System.out.println(sequentialSearch(wordForQuick,"yellow-earth"));
+        // Sort end time//time calculation // nanosecond to millisecond conversion
+        endTime = System.nanoTime();
+        elapsedTime = endTime -startTime;
+        executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+        //Printing bubble runtime
+        System.out.println("Sequential Search Runtime yellow-earth "+executionTimeMilliseconds+"ms");
+
+        startTime = System.nanoTime();
+        System.out.println(sequentialSearch(wordForQuick,"amarillo"));
+        // Sort end time//time calculation // nanosecond to millisecond conversion
+        endTime = System.nanoTime();
+        elapsedTime = endTime -startTime;
+        executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+        //Printing bubble runtime
+        System.out.println("Sequential Search Runtime amarillo "+executionTimeMilliseconds+"ms");
+
+        startTime = System.nanoTime();
+        System.out.println(sequentialSearch(wordForQuick,"AMARyYO"));
+        // Sort end time//time calculation // nanosecond to millisecond conversion
+        endTime = System.nanoTime();
+        elapsedTime = endTime -startTime;
+        executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+        //Printing bubble runtime
+        System.out.println("Sequential Search Runtime AMARyYO "+executionTimeMilliseconds+"ms");
+
+        startTime = System.nanoTime();
+        System.out.println(sequentialSearch(wordForQuick,"yellow"));
+        // Sort end time//time calculation // nanosecond to millisecond conversion
+        endTime = System.nanoTime();
+        elapsedTime = endTime -startTime;
+        executionTimeMilliseconds = (double) elapsedTime/1_000_000.0;
+        //Printing bubble runtime
+        System.out.println("Sequential Search Runtime yellow "+executionTimeMilliseconds+"ms");
+
+
     }
 
     //Utilities
@@ -149,20 +190,25 @@ public class Main {
         return binarySearch(first, 0, first.length-1,searchString);
     }
 
-    private static int binarySearch(String first[], int start, int end, String searchString){
-        int mid = start + (end-start)/2;
+    private static int binarySearch(String[] first, int start, int end, String searchString) {
+        if(start <= end){
 
-        if(first[mid].compareTo(searchString)==0){
-            return mid;
-        }
-        if(first[mid].compareTo(searchString)> 0){
-            return binarySearch(first, start, mid-1, searchString);
-        }else if(first[mid].compareTo(searchString)< 0){
-            return binarySearch(first, mid+1, end, searchString);
+            int mid = start + (end-start) / 2;
+            if(first[mid].compareTo(searchString) == 0){
+                return mid;
+            }
+            if(first[mid].compareTo(searchString) > 0){
+                return binarySearch(first, start, mid - 1, searchString);
+            }
+            else{
+                return binarySearch(first, mid + 1, end, searchString);
+            }
+
         }
         return -1;
     }
-    public int sequentialSearch(String[] array,String searchString){
+
+    public static int sequentialSearch(String[] array,String searchString){
         for (int i = 0; i < array.length; i++) {
             if(array[i].equals(searchString)){
                 return i;
