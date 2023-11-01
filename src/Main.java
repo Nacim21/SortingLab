@@ -116,6 +116,14 @@ public class Main {
         }
         return -1;
     }
+    public int sequentialSearch(String[] array,String searchString){
+        for (int i = 0; i < array.length; i++) {
+            if(array[i].equals(searchString)){
+                return i;
+            }
+        }
+        return -1;
+    }
 
 
 }
