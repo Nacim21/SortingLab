@@ -99,5 +99,18 @@ public class Main {
             System.out.print(arr[i]+", ");
         }
     }
+    public int binarySearch(String first[], int start, int end, String searchString){
+        int mid = start + (end-start)/2;
+
+        if(first[mid].compareTo(searchString)==0){
+            return mid;
+        }
+        if(first[mid].compareTo(searchString)> 0){
+            return binarySearch(first, start, mid-1, searchString);
+        }else if(first[mid].compareTo(searchString)< 0){
+            return binarySearch(first, mid+1, end, searchString);
+        }
+        return -1;
+    }
 
 }
