@@ -57,7 +57,7 @@ public class Main {
     */
         //Starting time for Shell Sort
        long startTime = System.nanoTime();
-        SortAlgorithms.shellSort(wordForSelection);
+        SortAlgorithms.shellSort(wordForShell);
         // Sort end time//time calculation // nanosecond to millisecond conversion
         long endTime = System.nanoTime();
         long elapsedTime = endTime -startTime;
@@ -85,6 +85,14 @@ public class Main {
             String current = fileScanner.nextLine();
             array[i] = current;
         }
+    }
+    public static boolean isSorted(String[] array){
+        for (int i = 0; i < array.length-1; i++) {
+            if (array[i].compareTo(array[i + 1]) > 0) {
+                return false;
+            }
+        }
+        return true;
     }
     public static void printArray(String[] arr){
         for (int i = 0; i < arr.length; i++) {
