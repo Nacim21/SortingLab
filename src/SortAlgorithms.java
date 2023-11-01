@@ -45,7 +45,7 @@ public class SortAlgorithms {
         }
     }
 
-    public static int partition(String[] words, int i, int k) {
+    private static int partition(String[] words, int i, int k) {
         int l;
         int h;
         int midpoint;
@@ -80,7 +80,11 @@ public class SortAlgorithms {
         }
         return h;
     }
-    public static void quickSort(String[] words, int i, int k) {
+    public static void quickSort(String[] words){
+        quickSort(words,0,words.length-1);
+    }
+
+    private static void quickSort(String[] words, int i, int k) {
         int j;
       /* Base case: If there are 1 or zero entries to sort,
        partition is already sorted */
@@ -95,7 +99,7 @@ public class SortAlgorithms {
         quickSort(words, i, j);
         quickSort(words, j + 1, k);
     }
-    public static void merge(String[] words, int i, int j, int k) {
+    private static void merge(String[] words, int i, int j, int k) {
         int mergedSize = k - i + 1;       // Size of merged partition
         String mergedNumbers [] = new String[mergedSize]; // Temporary array for merged numbers
         int mergePos;                     // Position to insert merged number
@@ -139,7 +143,11 @@ public class SortAlgorithms {
         }
     }
 
-    public static void mergeSort(String[] words, int i, int k) {
+    public static void mergeSort(String[] words){
+        mergeSort(words,0, words.length-1);
+    }
+
+    private static void mergeSort(String[] words, int i, int k) {
         int j;
 
         if (i < k) {
