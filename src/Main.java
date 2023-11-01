@@ -129,13 +129,16 @@ public class Main {
             array[i] = current;
         }
     }
-    public static boolean isSorted(String[] array){
+    public static void isSorted(String[] array){
         for (int i = 0; i < array.length-1; i++) {
             if (array[i].compareTo(array[i + 1]) > 0) {
-                return false;
+                System.out.println("Array is not sorted");
+                break;
+            }
+            if(i+1 == array.length-1){
+                System.out.println("Array is sorted");
             }
         }
-        return true;
     }
     public static void printArray(String[] arr){
         for (int i = 0; i < arr.length; i++) {
